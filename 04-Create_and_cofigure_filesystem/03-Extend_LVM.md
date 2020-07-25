@@ -30,11 +30,11 @@ pvcreate /dev/sdY1
 # extend vgName to new disk
 vgextend vgName /dev/sdY1
 
-# copy pne physical volume to another
-pvmove /dev/sdY1
+# copy one physical volume to another
+pvmove /dev/sdX1 /dev/sdY1
 
 # remove one physical device
-pvreduce vgName /dev/sdX1
+vgreduce vgName /dev/sdX1
 
 # extend logical volume
 lvextend -L +4G /dev/vgName/lvName
